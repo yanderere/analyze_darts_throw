@@ -1,5 +1,6 @@
 const argv = require('argv');
 const editMovie = require('../helper/editMovie');
+const compositeImgs = require('../helper/compositeImgs');
 
 // 起動時のオプション設定
 argv.option({
@@ -13,5 +14,14 @@ argv.option({
 const filePath = argv.run().targets[0];
 
 (async function () {
-	await editMovie.separateMovie(filePath);
+
+	try {
+		// スロー動画を分割する
+		await editMovie.separateMovie(filePath);
+
+		await compositeImgs.compositeImgs();
+	} catch (e) {
+		console.log(e);
+	}
+
 })();

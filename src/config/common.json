@@ -1,3 +1,6 @@
 {
-  "separate_img_path": "rw/separated_img"
+  "separate_img_path": "rw/separated_img/",
+  "composite_tmp_path": "/rw/tmp_output/",
+  "composite_complete_path": "/rw/complete/",
+  "separate_count": 20
 }
